@@ -11,6 +11,8 @@ try:
     delqry="DELETE FROM Employs WHERE DeptId=%d"
     cur.execute(delqry % (did))
     con.commit()
+    con.close()
+    print("Connection established to Oracle DB")
 except cx_Oracle.DatabaseError as e:
     print(e)
     if cur:
